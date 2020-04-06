@@ -1,0 +1,6 @@
+
+#mac
+~* 
+
+#go vendor
+vendor/*/
