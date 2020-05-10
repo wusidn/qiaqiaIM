@@ -1,25 +1,34 @@
 package main
 
 import (
-	"log"
-	"github.com/qiaqia/haha"
-	"github.com/gin-gonic/gin"
+	"sync"
+	"fmt"
+	"github.com/wusidn/qiaqia/web"
+	"github.com/wusidn/qiaqia/chat"
+	"github.com/wusidn/qiaqia/daomysql"
 )
 
 func main() {
-	rouder := gin.New()
-	rouder.Use(Login(), gin.Logger(), gin.Recovery())
-    rouder.GET("/ping", func(c *gin.Context) {
 
-		random := c.Query("random")
+	dao, err := daomysql.Default()
+	if err != nil{
+		panic(fmt.Sprintf("init dao fail [%v]", err.Error()))
+	}
+	defer dao.Close()
 
-		a := &haha.Haha{Name: "wangqiaqia"}
-		a.SayHi()
+	wg := &sync.WaitGroup{}
 
-        c.JSON(200, gin.H{
-			"message": "pong",
-			"random": random,
-        })
-    })
-    rouder.Run() // listen and serve on 0.0.0.0:8080
+	//开启web服务器
+	wg.Add(1)
+	webService := web.New(dao)
+	go webService.Run(wg)
+
+	//开启socket服务器
+	wg.Add(1)
+	chatService := chat.New(dao)
+	go chatService.Run(wg)
+
+	// chatService.Done()
+
+	wg.Wait()
 }

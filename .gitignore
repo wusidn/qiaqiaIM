@@ -4,3 +4,6 @@
 
 #go vendor
 vendor/*/
+
+#mysql db
+db/

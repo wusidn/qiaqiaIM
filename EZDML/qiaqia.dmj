@@ -1,0 +1,198 @@
+{
+  "RootName": "DataModels",
+  "CTVER": "43543234",
+  "TableCount": 3,
+  "Count": 1,
+  "items": [{
+    "ID": 1,
+    "Name": "qiaqia",
+    "CreateDate": "21-4-20 13:44:10",
+    "OrderNo": 1,
+    "Tables": {
+      "Count": 3,
+      "items": [
+        {
+          "ID": 1,
+          "Name": "users",
+          "CreateDate": "21-4-20 13:44:24",
+          "OrderNo": 1,
+          "GraphDesc": "Left=171.00\r\nTop=118.00",
+          "MetaFields": {
+            "Count": 5,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "Id",
+                "OrderNo": 1,
+                "DataType": 2,
+                "KeyFieldType": 1,
+                "DefaultValue": "{auto_increment}",
+                "Nullable": true
+              },
+              {
+                "ID": 9,
+                "Name": "CreateDate",
+                "Memo": "\n",
+                "OrderNo": 2,
+                "DataType": 4
+              },
+              {
+                "ID": 69,
+                "Name": "ModifyDate",
+                "OrderNo": 3,
+                "DataType": 4,
+                "Nullable": true
+              },
+              {
+                "ID": 70,
+                "Name": "Locked",
+                "OrderNo": 4,
+                "DataType": 5,
+                "DataTypeName": "tinyint unsigned",
+                "Nullable": true
+              },
+              {
+                "ID": 71,
+                "Name": "LockDate",
+                "OrderNo": 5,
+                "DataType": 4,
+                "Nullable": true
+              }
+            ]
+          }
+        },
+        {
+          "ID": 2,
+          "Name": "admin",
+          "CreateDate": "21-4-20 13:51:30",
+          "OrderNo": 2,
+          "GraphDesc": "Left=465.00\r\nTop=123.00",
+          "MetaFields": {
+            "Count": 6,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "Id",
+                "OrderNo": 1,
+                "DataType": 2,
+                "KeyFieldType": 1,
+                "DefaultValue": "{auto_increment}",
+                "Nullable": true
+              },
+              {
+                "ID": 83,
+                "Name": "UserId",
+                "OrderNo": 2,
+                "DataType": 2,
+                "KeyFieldType": 3,
+                "RelateTable": "users",
+                "RelateField": "Id",
+                "IndexType": 1,
+                "Nullable": true,
+                "GraphDesc": "P1=340.00,172.00\r\nP2=402.00,172.00\r\nP3=402.00,172.00\r\nP4=465.00,172.00\r\nHookP1=149.00,54.00\r\nHookP2=20.00,49.00\r\nMod_OP1=0\r\nMod_OP2=0\r\nMod_CP=0\r\nHorz1=1\r\nHorz2=1"
+              },
+              {
+                "ID": 84,
+                "Name": "Email",
+                "OrderNo": 3,
+                "DataType": 1,
+                "IndexType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 85,
+                "Name": "PhoneNumber",
+                "OrderNo": 4,
+                "DataType": 1,
+                "IndexType": 1,
+                "Nullable": true,
+                "DataLength": 16
+              },
+              {
+                "ID": 86,
+                "Name": "EncodePassWD",
+                "OrderNo": 5,
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 64
+              },
+              {
+                "ID": 113,
+                "Name": "IsSystem",
+                "OrderNo": 6,
+                "DataType": 5,
+                "DataTypeName": "tinyint unsigned",
+                "Nullable": true
+              }
+            ]
+          }
+        },
+        {
+          "ID": 4,
+          "Name": "login",
+          "CreateDate": "21-4-20 13:59:33",
+          "OrderNo": 3,
+          "GraphDesc": "Left=142.00\r\nTop=294.00",
+          "MetaFields": {
+            "Count": 6,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "Id",
+                "OrderNo": 1,
+                "DataType": 2,
+                "KeyFieldType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 2,
+                "Name": "AdminId",
+                "OrderNo": 2,
+                "DataType": 2,
+                "KeyFieldType": 3,
+                "RelateTable": "admin",
+                "RelateField": "Id",
+                "Nullable": true,
+                "GraphDesc": "P1=493.00,241.00\r\nP2=493.00,314.00\r\nP3=493.00,314.00\r\nP4=339.00,314.00\r\nHookP1=28.00,90.00\r\nHookP2=177.00,20.00\r\nMod_OP1=0\r\nMod_OP2=0\r\nMod_CP=0\r\nHorz1=0\r\nHorz2=1"
+              },
+              {
+                "ID": 136,
+                "Name": "Token",
+                "OrderNo": 3,
+                "DataType": 1,
+                "IndexType": 1,
+                "Nullable": true,
+                "DataLength": 128
+              },
+              {
+                "ID": 137,
+                "Name": "LoginDate",
+                "OrderNo": 4,
+                "DisplayName": " ",
+                "DataType": 4,
+                "Nullable": true
+              },
+              {
+                "ID": 139,
+                "Name": "LoginAddress",
+                "OrderNo": 5,
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 16
+              },
+              {
+                "ID": 140,
+                "Name": "LoginDevice",
+                "OrderNo": 6,
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }]
+}
